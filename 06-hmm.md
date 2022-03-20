@@ -1,3 +1,5 @@
+# Hidden Markov Models
+
 ## Overview
 A **Hidden Markov Model (HMM)** is a type of **Markov model** in which the system being modeled is assumed to be a Markov process. That is, it is a "memoryless" system who's trajectory is solely determined by it's current state. The HMM is considered "hidden" becuase we do not (or can not) know about the states of the variable being observered (say, $X$). Hence, we attempt to to learn about $X$ by observing $Y$, some sort of observation/event that occurs due to the hidden states. Like all Markov processes, HMM has an additional requirement that the outcome of $Y$ at time $t=t_0$ may be "influenced" **only** by the outcome of $X$ at $t=t_0$ and that the outcomes of $X$ and $Y$ at $t=t_0$ must **not** affect the outcome of $Y$ at $t=t_0$. I.e. the states before the current state have no impact on the future except via the current state. It’s as if to predict tomorrow’s weather you could examine today’s weather but you weren’t allowed to look at yesterday’s weather!
 
@@ -81,8 +83,10 @@ There are many computational prolems with HMMs. Below are just a few. In general
 Given the HMM M=(A,B,$\pi$), and an observation sequence $O$ calculate the most likely sequence of states that produced $O$. This is commonly solved using the [Viterbi Algorithm](https://en.wikipedia.org/wiki/Viterbi_algorithm)and involves the application of dynamic programming to recurse through a state matrix and for obtaining the maximum *a posteriori* probability estimate of the most likely sequence of hidden states—called the Viterbi path—that results in a sequence of observed events, especially in the context of Markov information sources and hidden Markov models (HMM)
 
 ![Viterbi algorithm](figs/viterbi.png)
+
 ### Likelihood Problem:
 Similar to the above decoding problem, given the HMM 𝑀=(𝐴,𝐵,$\pi$), and an observation sequence $O$,$o_i$ $\in$ $\nu_1, \nu_2, \dots, \nu_M$ we need to calculate the likelihood P($O$|M) using the probabilties of observations given a set of states:
+
 $$
 P(O|S) = \prod_{i=1}^TP(O_i|S_i)
 $$

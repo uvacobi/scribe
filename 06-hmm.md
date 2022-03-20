@@ -1,14 +1,14 @@
 # Hidden Markov Models
 
 ## Overview
-A **Hidden Markov Model (HMM)** is a type of **Markov model** in which the system being modeled is assumed to be a Markov process. That is, it is a "memoryless" system who's trajectory is solely determined by it's current state. The HMM is considered "hidden" becuase we do not (or can not) know about the states of the variable being observered (say, $X$). Hence, we attempt to to learn about $X$ by observing $Y$, some sort of observation/event that occurs due to the hidden states. Like all Markov processes, HMM has an additional requirement that the outcome of $Y$ at time $t=t_0$ may be "influenced" **only** by the outcome of $X$ at $t=t_0$ and that the outcomes of $X$ and $Y$ at $t=t_0$ must **not** affect the outcome of $Y$ at $t=t_0$. I.e. the states before the current state have no impact on the future except via the current state. It’s as if to predict tomorrow’s weather you could examine today’s weather but you weren’t allowed to look at yesterday’s weather!
+A **Hidden Markov Model (HMM)** is a type of **Markov model** in which the system being modeled is assumed to be a Markov process. That is, it is a "memoryless" system whose trajectory is solely determined by its current state. The HMM is considered "hidden" because we do not (or can not) know about the states of the variable being observed (say, $X$). Hence, we attempt to learn about $X$ by observing $Y$, some sort of observation/event that occurs due to the hidden states. Like all Markov processes, HMM has an additional requirement that the outcome of $Y$ at time $t=t_0$ may be "influenced" **only** by the outcome of $X$ at $t=t_0$ and that the outcomes of $X$ and $Y$ at $t=t_0$ must **not** affect the outcome of $Y$ at $t=t_0$. I.e. the states before the current state have no impact on the future except via the current state. It’s as if to predict tomorrow’s weather you could examine today’s weather but you weren’t allowed to look at yesterday’s weather!
 
 Here is an example of a 3-state **Markov model**:
 
 ![Simple Markov Model](figs/markov-graph.png)
-As we move from state to state (*node to node* or *circle to circle*), there is a **weight** associated with each edge, indicating the probably that we move from one node to another.
+As we move from state to state (*node to node* or *circle to circle*), there is a **weight** associated with each edge, indicating the probability that we move from one node to another.
 
-A Markov chain is useful when we need to compute a probability for a sequence of observable events. In many cases, however, the events we are interestehed in are hidden: we don’t observe them directly. For example we don’t normally observe part-of-speech tags in a text. Rather, we see words, and must infer the tags from the word sequence. We call the tags hidden because they are not observed.
+A Markov chain is useful when we need to compute a probability for a sequence of observable events. In many cases, however, the events we are interested in are hidden: we don’t observe them directly. For example, we don’t normally observe part-of-speech tags in a text. Rather, we see words and must infer the tags from the word sequence. We call the tags hidden because they are not observed.
 
 HMM's have applications in all sorts of areas including **thermodynamics, economics, speech,  pattern recognition, bioinformatics,** and more. They provide a foundation for probabilistic models of linear sequence ‘labeling’ problems.
 
@@ -27,7 +27,7 @@ $$
 s_{i1}, s_{i2}, s_{i3}, \dots s_{ik} \dots
 $$
 The following need to be defined for a **Markov model**:
-1. **Transition probabilties:**
+1. **Transition probabilities:**
 $$
 𝐴 = (𝑎_{ij}), 𝑎_{ij} = 𝑃(𝑠_𝑖,𝑠_𝑗)
 $$
@@ -35,15 +35,15 @@ $$
 $$
 \pi = \left\{P(s_1), P(s_2), \dots, P(s_i) \right\}
 $$
-A **hidden** markov model requires one more mathematical definition. We need to know the probabiltity of observing an event **given** a state:
+A **hidden** Markov model requires one more mathematical definition. We need to know the probability of observing an event **given** a state:
 
 $$
 𝐵=(𝑏_𝑖(𝑣_𝑚)),𝑏_𝑖(𝑣_𝑚)=𝑃(𝑣_𝑚|𝑠_𝑖)
 $$
-These are known as **emission probabilties**. The probability that given a state, we "emit" to a certain observation.
+These are known as **emission probabilities**. The probability that given a state, we "emit" to a certain observation.
 
-Given the above, we can alter the graph model above to represent a **hidden** markov moidel:
-![Simple hidden markov model](figs/hmm.png)
+Given the above, we can alter the graph model above to represent a **hidden** Markov model:
+![Simple hidden Markov model](figs/hmm.png)
 
 ## An Example
 *The following example problem is pulled from [wikipedia](https://en.wikipedia.org/wiki/Hidden_Markov_model#Weather_guessing_game):*
@@ -55,7 +55,7 @@ Alice believes that the weather operates as a discrete [Markov chain](https://en
 Alice knows the general weather trends in the area, and what Bob likes to do on average. In other words, the parameters of the HMM are known. They can be represented as follows in Python:
 
 ```python
-tates = ('Rainy', 'Sunny')
+states = ('Rainy', 'Sunny')
  
 observations = ('walk', 'shop', 'clean')
  
@@ -77,7 +77,7 @@ In this piece of code, `start_probability` represents Alice's belief about which
 ![Hidden Markov Model to predict weather](figs/weather-hmm.png)
 
 ## Computational problems with HMMs
-There are many computational prolems with HMMs. Below are just a few. In general, they involve the use of dynamic programming and gradient descent while solving for maximum liklihood of a certain sequence of states given observations. Often times, the probabilties in these algorithms are represented in **log space** to make it easier to work with the math while preventing **underflow** errors at the CPU level (numbers way too small for a computer to handle).
+There are many computational problems with HMMs. Below are just a few. In general, they involve the use of dynamic programming and gradient descent while solving for the maximum likelihood of a certain sequence of states given observations. Oftentimes, the probabilities in these algorithms are represented in **log space** to make it easier to work with the math while preventing **underflow** errors at the CPU level (numbers way too small for a computer to handle).
 
 ### Decoding problem : 
 Given the HMM M=(A,B,$\pi$), and an observation sequence $O$ calculate the most likely sequence of states that produced $O$. This is commonly solved using the [Viterbi Algorithm](https://en.wikipedia.org/wiki/Viterbi_algorithm)and involves the application of dynamic programming to recurse through a state matrix and for obtaining the maximum *a posteriori* probability estimate of the most likely sequence of hidden states—called the Viterbi path—that results in a sequence of observed events, especially in the context of Markov information sources and hidden Markov models (HMM)
@@ -85,7 +85,7 @@ Given the HMM M=(A,B,$\pi$), and an observation sequence $O$ calculate the most 
 ![Viterbi algorithm](figs/viterbi.png)
 
 ### Likelihood Problem:
-Similar to the above decoding problem, given the HMM 𝑀=(𝐴,𝐵,$\pi$), and an observation sequence $O$,$o_i$ $\in$ $\nu_1, \nu_2, \dots, \nu_M$ we need to calculate the likelihood P($O$|M) using the probabilties of observations given a set of states:
+Similar to the above decoding problem, given the HMM M=(A,B,$\pi$), and an observation sequence $O$,$o_i$ $\in$ $\nu_1, \nu_2, \dots, \nu_M$ we need to calculate the likelihood P($O$|M) using the probabilties of observations given a set of states:
 
 $$
 P(O|S) = \prod_{i=1}^TP(O_i|S_i)
@@ -93,12 +93,12 @@ $$
 However, the state sequence is unknown.
 
 ### Learning problem:
-Given observation sequence $O$, and general structure of HMM, determine HMM parameters that best fit the training data. Here we are solving a sort of reverse problem. That is, we **do not know** the specific probabilities of the the transition or emission states. All we know is the overall structure of the model, and using a set of training data, we can fit our model to produce "optimal" values for $A$, $B$, and $\pi$, such that the model can be appleid elsewhere.
+Given an observation sequence, $O$, and general structure of HMM, determine HMM parameters that best fit the training data. Here we are solving a sort of reverse problem. That is, we **do not know** the specific probabilities of the transition or emission states. All we know is the overall structure of the model, and using a set of training data, we can fit our model to produce "optimal" values for $A$, $B$, and $\pi$, such that the model can be applied elsewhere.
 
 The most well-known algorithm for this is the Basum-Welch algorithm, it utilizes a stochastic gradient descent algorithm and thus is not garautneed to be a truly optimal solution (local optima). It can also very computationally complex.
 
 ## Conclusions
-HMM's offer great prediction and modeling potential in the form of a highly-interpretable and statisically sound model/algorithm. They can be applied to many real world problems and are often computationally efficient (when making inferences). They still, however, have both pros and cons:
+HMM's offer great prediction and modeling potential in the form of a highly-interpretable and statistically sound model/algorithm. They can be applied to many real-world problems and are often computationally efficient (when making inferences). They still, however, have both pros and cons:
 
 ### Pros:
 - HMM models are highly studied, statistically sound, and highly interpretable models.
@@ -108,9 +108,10 @@ HMM's offer great prediction and modeling potential in the form of a highly-inte
 - Widely applicable
 
 ### Cons:
-* Bounded by the markov assumption: The next state is only determined byt the current state and not previous ones
+* Bounded by the Markov assumption: The next state is only determined byt the current state and not previous ones
 * For EM learning problems, the number of parameters to be evaluated is huge. So it needs a large data set for training.
 * Training an HMM can often be computationally challenging.
+
 
 
 

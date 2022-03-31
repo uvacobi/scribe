@@ -48,12 +48,11 @@ It is derived by IUPAC. one limitation is that they can not measure continue rel
 
 - Entropy
 
-    <script  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
     Entropy is used to measure the orderliness. 
     
     Boltzmann entropy: $S_B=-k_B\sum\limits_ip_i\ln(p_i)$
     
-    Shannon entropy: \\(H(X)=-\sum\limits_iP(x_i)\log_2P(x_i)\\)
+    Shannon entropy: $H(X)=-\sum\limits_iP(x_i)\log_2P(x_i)$
 
 
 - Position weight matrix

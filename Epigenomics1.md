@@ -1,14 +1,16 @@
 # Epigenomics 01
+From Professor Chongzhi Zang's lecture slides "Regulatory DNA, Transcription factors, Sequence motifs". Scribed by Zhaoxia Ma.
 ## Epigenome
 Different cells with similar genome sequences have different genes expression. The epigenome can control gene activities to decide which genes are turned on or off.
 
 *The epigenome is a multitude of chemical compounds that can tell the genome what to do. The epigenome is made up of chemical compounds and proteins that can attach to DNA and direct such actions as turning genes on or off, controlling the production of proteins in particular cells.          <p align="right">--from genome.gov</p>*
 
 ## Epigenomic marks
-| |Chemical compounds |Proteins |Other molecules |Other information|
-|---|---|---|---|---|
-|DNA-associated|DNA methylation|Histones;<br> DNA-binding proteins<br> (transcription factors*)|RNA<br>(e.g., R loops)<td rowspan=2> -nucleosome positioning;<br> - chromatin accessibility;<br> - 3D genome organization</td>|
-|Chromatin-associated|Histone modifications: methylations, acetylations, ... |Histone variants;<br> Chromatin regulators;<br> Histone modifying enzymes:writer, readers, erasers;<br> Chromatin remodeling complexes|Non-coding RNAs|
+
+| |Chemical compounds |Proteins |Other molecules <th rowspan=1>Other information</th>
+|---|---|---|---
+|DNA-associated|DNA methylation|Histones;<br> DNA-binding proteins<br> (transcription factors*)|RNA<br>(e.g., R loops)<td rowspan=2> -nucleosome positioning;<br> - chromatin accessibility;<br> - 3D genome organization</td>
+|Chromatin-associated|Histone modifications: methylations, acetylations, ... |Histone variants;<br> Chromatin regulators;<br> Histone modifying enzymes: writer, readers, erasers;<br> Chromatin remodeling complexes|Non-coding RNAs
 
 ## Epigenomics
 ### Transcription factors
@@ -46,10 +48,10 @@ It is derived by IUPAC. one limitation is that they can not measure continue rel
 
 - Entropy
 
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+    <script  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
     Entropy is used to measure the orderliness. 
     
-    Boltzmann entropy: \\(S_B=-k_B\sum\limits_ip_i\ln(p_i)\\)
+    Boltzmann entropy: $S_B=-k_B\sum\limits_ip_i\ln(p_i)$
     
     Shannon entropy: \\(H(X)=-\sum\limits_iP(x_i)\log_2P(x_i)\\)
 

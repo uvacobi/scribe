@@ -105,3 +105,5 @@ It is derived by IUPAC. one limitation is that they can not measure continue rel
 - Motif matching score
 
   Given the PPM and a background model $b$, we can also calculate the motif matching score using the likelihood ratio score. For example, the score for GAGGTAAAC = $\log_2\frac{p_G\times p_A \times p_G \times p_G \times p_T \times p_A \times p_A \times p_A \times p_A \times p_C}{b_G\times b_A \times b_G \times b_G \times b_T \times b_A \times b_A \times b_A \times b_A \times b_C}$
+
+##### De novo sequence motif finding

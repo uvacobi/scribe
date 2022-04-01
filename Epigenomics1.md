@@ -98,4 +98,6 @@ It is derived by IUPAC. one limitation is that they can not measure continue rel
     \end{bmatrix}$$
     
 - Graphic representation: 
+- 
+  When we talk about TF binding sites or motifs, we always see some sequence logo. The sequence logo consists of stacks of symbols, one stack is for each position in the sequence. The overall height of the stack indicates the sequence conservation at that position (information content). The height of symbols within the stack indicates the relative frequency of nucleic acid at that position. For example, in this sequence logo, the height of each position is calculated as $R_i=\log_2(4)-H_i$, in which $H_i=-\sum\limits_bM_{b,i}*\log_2M_{b,i}$
 ![sequence logo](figs/motif_eg.PNG)

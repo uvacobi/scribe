@@ -97,6 +97,5 @@ It is derived by IUPAC. one limitation is that they can not measure continue rel
     0.4&0.1&0.1&0.0&1.0&0.1&0.1&0.2&0.6
     \end{bmatrix}$$
     
-- Graphic representation: sequence logo
-![sequence logo source:[myhub](https://github.com/mzxj/scribe/blob/main/figs/motif_eg.PNG)](figs/motif_eg.PNG)
-![sequence logo](https://github.com/mzxj/scribe/blob/main/figs/motif_eg.PNG)
+- Graphic representation: 
+![sequence logo](figs/motif_eg.PNG)

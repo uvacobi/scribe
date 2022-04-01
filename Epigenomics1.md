@@ -97,7 +97,7 @@ It is derived by IUPAC. one limitation is that they can not measure continue rel
     0.4&0.1&0.1&0.0&1.0&0.1&0.1&0.2&0.6
     \end{bmatrix}$$
     
-- Graphic representation: 
-
-  When we talk about TF binding sites or motifs, we always see some sequence logo. The sequence logo consists of stacks of symbols, one stack is for each position in the sequence. The overall height of the stack indicates the sequence conservation at that position (information content). The height of symbols within the stack indicates the relative frequency of nucleic acid at that position. For example, in this sequence logo, the height of each position is calculated as $R_i=\log_2(4)-H_i$, in which $H_i=-\sum\limits_bM_{b,i}*\log_2M_{b,i}$
+    When we talk about TF binding sites or motifs, we always see some sequence logo. The sequence logo consists of stacks of symbols, one stack is for each position in the sequence. The overall height of the stack indicates the sequence conservation at that position (information content). The height of symbols within the stack indicates the relative frequency of nucleic acid at that position. For example, in this sequence logo, the height of each position is calculated as $R_i=\log_2(4)-H_i$, in which $H_i=-\sum\limits_kM_{k,i}\times\log_2M_{k,i}$
 ![sequence logo](figs/motif_eg.PNG)
+
+    Given the PPM (M) and a background model $b$, we can calculate the position weight matrix (PWM). In the PWM, $M_{k,i}=\log_2(M_{k,i}/b_k)$, in which $b=(b_1, b_2, b_3, b_4)=(p_A, p_C, p_G, p_T)$. For nucleotides, $b_k=0.25$. In general, $b_k$ does not have to be equal for each symbols. For example, if the organisms we studied with a high GC-content, the $b_k$ for C and G will be higher than that for A and T. Besides, in practice, in order for convenience for calculation, we will give a pseudo count (like 0.0001) to 0 to avoid the logarithm of 0.

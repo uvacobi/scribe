@@ -32,7 +32,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
 |A|A|**A**denine|
 |T|T|**T**hymine|
 |C|C|**C**ytosine|
-|R|G or A|pu***R***ine|
+|R|G or A|pu**R**ine|
 |Y|T or C|p**Y**rimidine|
 |M|A or C|a**M**ino|
 |K|G or T|**K**eto|

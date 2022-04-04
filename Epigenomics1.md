@@ -151,5 +151,5 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
     &=0.2\times 0.1\times 0.3\times 0.03\times 0.5\\\\
     &=9\times 10^{-5}.
     \end{align*}
-    Therefore, $LR_1={\rm likelihood ratio}=\frac{P({\rm TTGAC}|\theta)}{P({\rm TTGAC}|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}\approx 8%$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
+    Therefore, $LR_1={\rm likelihood ratio}=\frac{P({\rm TTGAC}|\theta)}{P({\rm TTGAC}|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}\approx 8 %$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
 - M-step: given $theta_0$, $seq$, and $\pi$ to estimate $\theta$. in which $\theta_0$ and $seq$ are known while $\pi$ is calculated by E-step.

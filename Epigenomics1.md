@@ -114,3 +114,33 @@ The deterministic approach is regular expression enumeration. The basic idea for
 
 ##### Probabilistic approach
 Different from deterministic approach which is pattern driven approach, the probabilistic approach is data driven approach. Expectation-Maximization (EM) approach and Gibbs Sampling are two probabilistic approaches. Here we talk about the EM approach.
+
+The objects of this approach are as follows: $seq$ is sequence data to search for motif; $\theta_0$ is non-motif probability (genome backgrouhnd) parameter; $\theta$ is motif probability matrix parameter; $\pi$ is motif site location. The problem of this approach is to estimate $P(\theta, \pi|seq, \theta_0)$. The approach is to alternately
+estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the two steps are called E-step and M-step respectively. Here is an example for this approach:
+
+- E-step: given $theta_0$, $seq$ and $\theta$ to estimate $\pi$, in which $\theta_0$ and $seq$ are known while $\theta$ is given a initial value. In alternative steps, $\theta$ is calculated by M-step. $\theta_0: p_{0A}=0.3, p_{0C}=0.2, p_{0G}=0.2, p_{0T}=0.3$. 
+
+    $seq:$
+    \begin{matrix}
+    T&T&G&A&C&G&A&C&T&G&C&A&C&G&T& & & & \\\\
+    T&T&G&A&C& & & & & & & & & & & & & &LR_1\\\\
+     &T&G&A&C&G& & & & & & & & & & & & &LR_2\\\\
+     & &G&A&C&G&A& & & & & & & & & & & &LR_3\\\\
+     & & &A&C&G&A&C& & & & & & & & & & &LR_4\\\\
+     & & & &C&G&A&C&T& & & & & & & & & &LR_5\\\\
+     & & & & &G&A&C&T&G& & & & & & & & &LR_6\\\\
+     & & & & & &A&C&T&G&C& & & & & & & &LR_7\\\\
+     & & & & & & &C&T&G&C&A& & & & & & &LR_8\\\\
+     & & & & & & & &.&.&.& & & & & & & & \\\\
+     \end{matrix}
+     $\theta$:
+    |pos|A|C|G|T|
+    |---|---|---|---|---|
+    |1|0.7|0.1|0.01|0.2|
+    |2|0.01|0.01|0.8|0.1|
+    |3|0.32|0.02|0.3|0.18|
+    |4|0.03|0.42|0.1|0.47|
+    |5|0.2|0.5|0.1|0.2|
+
+    Then, for $LR_1$, $P(TTGAC|\theta_0)=p_{0T}\times p_{0T}\times p_{0G}\times p_{0A}\times p_{0C}=0.3\times 0.3\times 0.2\times 0.3\times 0.2=1.08\times 10^{-3}$, $P(TTGAC|\theta)=P(T in pos1)\times P(T in pos2)\times P(G in pos3)\times P(A in pos4)\times P(C in pos5)=0.2\times 0.1\times 0.3\times 0.03\times 0.5=9\times 10^{-5}$. Therefore, $LR_1={\rm likelihood ratio}=\frac{P(TTGAC|\theta)}{P(TTGAC|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
+- M-step: given $theta_0$, $seq$, and $\pi$ to estimate $\theta$. in which $\theta_0$ and $seq$ are known while $pi$ is calculated by E-step.

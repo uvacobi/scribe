@@ -109,6 +109,8 @@ It is derived by IUPAC. one limitation is that they can not measure continue rel
 #### De novo sequence motif finding
 The goal of de novo sequence motif finding is to look for common sequence patterns enriched in the input data compared to a background genome. There are two kinds approaches to do de novo sequence motif finding: deterministic approach and probabilistic approach. 
 
+##### Deterministic approach
 The deterministic approach is regular expression enumeration. The basic idea for this approach is to check over-representation for every $w$-mer by comparing observed $w$ occurrence in data and expected $w$ occurrence in data. The over-represented $w$ is potential TF binding motif. The advantages of this approach are that it is exhaustive, can guatantee to find global optimum, and can find multiple motifs. For disadvanteges, one is that it is not as flexible with base substitutions and long list of similar good motifs, and the other is that it's limited with motif width.
 
+##### Probabilistic approach
 Different from deterministic approach which is pattern driven approach, the probabilistic approach is data driven approach. Expectation-Maximization (EM) approach and Gibbs Sampling are two probabilistic approaches. Here we talk about the EM approach.

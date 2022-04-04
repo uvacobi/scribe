@@ -122,15 +122,15 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
 
     $seq:$
     \begin{matrix}
-    T&T&G&A&C&G&A&C&T&G&C&A&C&G&T& & & & \\\\
-    T&T&G&A&C& & & & & & & & & & & & & &LR_1\\\\
-     &T&G&A&C&G& & & & & & & & & & & & &LR_2\\\\
-     & &G&A&C&G&A& & & & & & & & & & & &LR_3\\\\
-     & & &A&C&G&A&C& & & & & & & & & & &LR_4\\\\
-     & & & &C&G&A&C&T& & & & & & & & & &LR_5\\\\
-     & & & & &G&A&C&T&G& & & & & & & & &LR_6\\\\
-     & & & & & &A&C&T&G&C& & & & & & & &LR_7\\\\
-     & & & & & & &C&T&G&C&A& & & & & & &LR_8\\\\
+    {\rm T}&{\rm T}&{\rm G}&{\rm A}&{\rm C}&{\rm G}&{\rm A}&{\rm C}&{\rm T}&{\rm G}&{\rm C}&{\rm A}&{\rm C}&{\rm G}&{\rm T}& & & & \\\\
+    {\rm T}&{\rm T}&{\rm G}&{\rm A}&{\rm C}& & & & & & & & & & & & & &LR_1\\\\
+     &{\rm T}&{\rm G}&{\rm A}&{\rm C}&{\rm G}& & & & & & & & & & & & &LR_2\\\\
+     & &{\rm G}&{\rm A}&{\rm C}&{\rm G}&{\rm A}& & & & & & & & & & & &LR_3\\\\
+     & & &{\rm A}&{\rm C}&{\rm G}&{\rm A}&{\rm C}& & & & & & & & & & &LR_4\\\\
+     & & & &{\rm C}&{\rm G}&{\rm A}&{\rm C}&{\rm T}& & & & & & & & & &LR_5\\\\
+     & & & & &{\rm G}&{\rm A}&{\rm C}&{\rm T}&{\rm G}& & & & & & & & &LR_6\\\\
+     & & & & & &{\rm A}&{\rm C}&{\rm T}&{\rm G}&{\rm C}& & & & & & & &LR_7\\\\
+     & & & & & & &{\rm C}&{\rm T}&{\rm G}&{\rm C}&{\rm A}& & & & & & &LR_8\\\\
      & & & & & & & &.&.&.& & & & & & & & \\\\
      \end{matrix}
      $\theta$:
@@ -142,5 +142,5 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
     |4|0.03|0.42|0.1|0.47|
     |5|0.2|0.5|0.1|0.2|
 
-    Then, for $LR_1$, $P(TTGAC|\theta_0)=p_{0T}\times p_{0T}\times p_{0G}\times p_{0A}\times p_{0C}=0.3\times 0.3\times 0.2\times 0.3\times 0.2=1.08\times 10^{-3}$, $P(TTGAC|\theta)=P(T in pos1)\times P(T in pos2)\times P(G in pos3)\times P(A in pos4)\times P(C in pos5)=0.2\times 0.1\times 0.3\times 0.03\times 0.5=9\times 10^{-5}$. Therefore, $LR_1={\rm likelihood ratio}=\frac{P(TTGAC|\theta)}{P(TTGAC|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
+    Then, for $LR_1$, $P({rm TTGAC}|\theta_0)=p_{0{\rm T}}\times p_{0{\rm T}}\times p_{0{\rm G}}\times p_{0{\rm A}}\times p_{0{\rm C}}=0.3\times 0.3\times 0.2\times 0.3\times 0.2=1.08\times 10^{-3}$, $P({rm TTGAC}|\theta)=P({\rm T in pos1})\times P({\rm T in pos2})\times P({\rm G in pos3})\times P({\rm A in pos4})\times P({\rm C in pos5})=0.2\times 0.1\times 0.3\times 0.03\times 0.5=9\times 10^{-5}$. Therefore, $LR_1={\rm likelihood ratio}=\frac{P({\rm TTGAC}|\theta)}{P({\rm TTGAC}|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
 - M-step: given $theta_0$, $seq$, and $\pi$ to estimate $\theta$. in which $\theta_0$ and $seq$ are known while $pi$ is calculated by E-step.

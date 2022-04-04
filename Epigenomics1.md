@@ -144,13 +144,13 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
 
     Then, for $LR_1$, 
     \begin{align*}
-    P({\rm TTGAC}|\theta_0)&=p_{0{\rm T}}\times p_{0{\rm T}}\times p_{0{\rm G}}\times p_{0{\rm A}}\times p_{0{\rm C}}
-    &=0.3\times 0.3\times 0.2\times 0.3\times 0.2
+    P({\rm TTGAC}|\theta_0)&=p_{0{\rm T}}\times p_{0{\rm T}}\times p_{0{\rm G}}\times p_{0{\rm A}}\times p_{0{\rm C}}\\\\
+    &=0.3\times 0.3\times 0.2\times 0.3\times 0.2\\\\
     &=1.08\times 10^{-3}
     \end{align*}
     \begin{align*}
-    P({\rm TTGAC}|\theta)&=P({\rm T\ in\ pos1})\times P({\rm T\ in\ pos2})\times P({\rm G\ in\ pos3})\times P({\rm A\ in\ pos4})\times P({\rm C\ in\ pos5})
-    &=0.2\times 0.1\times 0.3\times 0.03\times 0.5
+    P({\rm TTGAC}|\theta)&=P({\rm T\ in\ pos1})\times P({\rm T\ in\ pos2})\times P({\rm G\ in\ pos3})\times P({\rm A\ in\ pos4})\times P({\rm C\ in\ pos5})\\\\
+    &=0.2\times 0.1\times 0.3\times 0.03\times 0.5\\\\
     &=9\times 10^{-5}.
     \end{align*}
     Therefore, $LR_1={\rm likelihood ratio}=\frac{P({\rm TTGAC}|\theta)}{P({\rm TTGAC}|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.

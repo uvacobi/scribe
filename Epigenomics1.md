@@ -118,8 +118,9 @@ Different from deterministic approach which is pattern driven approach, the prob
 The objects of this approach are as follows: $seq$ is sequence data to search for motif; $\theta_0$ is non-motif probability (genome backgrouhnd) parameter; $\theta$ is motif probability matrix parameter; $\pi$ is motif site location. The problem of this approach is to estimate $P(\theta, \pi|seq, \theta_0)$. The approach is to alternately
 estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the two steps are called E-step and M-step respectively. Here is an example for this approach:
 
-- E-step: given $theta_0$, $seq$ and $\theta$ to estimate $\pi$, in which $\theta_0$ and $seq$ are known while $\theta$ is given a initial value. In alternative steps, $\theta$ is calculated by M-step. $\theta_0: p_{0{\rm A}}=0.3, p_{0{\rm C}}=0.2, p_{0{\rm G}}=0.2, p_{0{\rm T}}=0.3$. 
+- E-step: given $theta_0$, $seq$ and $\theta$ to estimate $\pi$, in which $\theta_0$ and $seq$ are known while $\theta$ is given a initial value. In alternative steps, $\theta$ is calculated by M-step. 
 
+  Given an example, $\theta_0: p_{0{\rm A}}=0.3, p_{0{\rm C}}=0.2, p_{0{\rm G}}=0.2, p_{0{\rm T}}=0.3$. 
     $seq:$
     \begin{matrix}
     {\rm T}&{\rm T}&{\rm G}&{\rm A}&{\rm C}&{\rm G}&{\rm A}&{\rm C}&{\rm T}&{\rm G}&{\rm C}&{\rm A}&{\rm C}&{\rm G}&{\rm T}& & & & \\\\
@@ -141,15 +142,29 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
     |3|0.32|0.02|0.3|0.18|
     |4|0.03|0.42|0.1|0.47|
     |5|0.2|0.5|0.1|0.2|
+    Then, for $LR_1$, $P({rm TTGAC}|\theta_0)=p_{0{\rm T}}\times p_{0{\rm T}}\times p_{0{\rm G}}\times p_{0{\rm A}}\times p_{0{\rm C}}=0.3\times 0.3\times 0.2\times 0.3\times 0.2=1.08\times 10^{-3}$, $P({rm TTGAC}|\theta)=P({\rm T in pos1})\times P({\rm T in pos2})\times P({\rm G in pos3})\times P({\rm A in pos4})\times P({\rm C in pos5})=0.2\times 0.1\times 0.3\times 0.03\times 0.5=9\times 10^{-5}$. Therefore, the likelihood ratio of the first motif $\pi_1$ is $LR_1=\frac{P({\rm TTGAC}|\theta)}{P({\rm TTGAC}|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
+- M-step: given $theta_0$, $seq$, and $\pi$ to estimate $\theta$, in which $\theta_0$ and $seq$ are known while $\pi$ with its likelihood ratio $LR$ is calculated by E-step. 
 
-    Then, for $LR_1$, 
-    \begin{align*}
-    P({\rm TTGAC}|\theta_0)&=p_{0{\rm T}}\times p_{0{\rm T}}\times p_{0{\rm G}}\times p_{0{\rm A}}\times p_{0{\rm C}}\\\\
-    &=0.3\times 0.3\times 0.2\times 0.3\times 0.2\\\\
-    &=1.08\times 10^{-3}\\\\
-    P({\rm TTGAC}|\theta)&=P({\rm T\ in\ pos1})\times P({\rm T\ in\ pos2})\times P({\rm G\ in\ pos3})\times P({\rm A\ in\ pos4})\times P({\rm C\ in\ pos5})\\\\
-    &=0.2\times 0.1\times 0.3\times 0.03\times 0.5\\\\
-    &=9\times 10^{-5}.
-    \end{align*}
-    Therefore, $LR_1={\rm likelihood ratio}=\frac{P({\rm TTGAC}|\theta)}{P({\rm TTGAC}|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}\approx 8$ \%. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
-- M-step: given $\theta_0$, $seq$, and $\pi$ to estimate $\theta$, in which $\theta_0$ and $seq$ are known while $\pi$ is calculated by E-step.
+  Given an example, $seq={\rm TTGACGACTGCACGT}$, $\pi$ and its likelihood ratio $LR$ are:
+|$\pi$|$LR$|
+|---|---|
+|${\rm TTGAC}$|0.8|
+|${\rm TGACG}$|0.2|
+|${\rm GACGA}$|0.6|
+|${\rm ACGAC}$|0.5|
+|${\rm CGACT}$|0.3|
+|${\rm GACTG}$|0.7|
+|${\rm ACTGC}$|0.4|
+|${\rm CTGCA}$|0.1|
+|${\rm TGCAC}$|0.9|
+|...|...|
+
+  Then we can update $\theta$ by estimate the probability of ${\rm A, C, G, T}$ in any of the 5 positions (5 is the length of the motif):
+$$
+P({\rm T in pos1})=\frac{0.8+0.2+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
+P({\rm T in pos2})=\frac{0.8+0.1+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
+P({\rm G in pos2})=\frac{0.2+0.3+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
+P({\rm C in pos5})=\frac{0.8+0.5+0.4+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
+... ...
+$$
+  After we get the updated $\theta$ from the M-step, we can re calculate the E-step. Iterate the E-step and M-step until $\theta$ does not improve. Then we can find the most frequent k-mers by calculate the likelihood ratio of each $\pi$.

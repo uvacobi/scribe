@@ -44,7 +44,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
 |D|G or A or T|not-C, D follows C|
 |N|G or A or T or C|a**N**y|
 
-It is derived by IUPAC. one limitation is that they can not measure continue relation/difference because it is binary decision.
+  It is derived by IUPAC. one limitation is that they can not measure continue relation/difference because it is binary decision.
 
 - Entropy
 
@@ -142,10 +142,12 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
     |3|0.32|0.02|0.3|0.18|
     |4|0.03|0.42|0.1|0.47|
     |5|0.2|0.5|0.1|0.2|
+    
     Then, for $LR_1$, $P({rm TTGAC}|\theta_0)=p_{0{\rm T}}\times p_{0{\rm T}}\times p_{0{\rm G}}\times p_{0{\rm A}}\times p_{0{\rm C}}=0.3\times 0.3\times 0.2\times 0.3\times 0.2=1.08\times 10^{-3}$, $P({rm TTGAC}|\theta)=P({\rm T in pos1})\times P({\rm T in pos2})\times P({\rm G in pos3})\times P({\rm A in pos4})\times P({\rm C in pos5})=0.2\times 0.1\times 0.3\times 0.03\times 0.5=9\times 10^{-5}$. Therefore, the likelihood ratio of the first motif $\pi_1$ is $LR_1=\frac{P({\rm TTGAC}|\theta)}{P({\rm TTGAC}|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
 - M-step: given $theta_0$, $seq$, and $\pi$ to estimate $\theta$, in which $\theta_0$ and $seq$ are known while $\pi$ with its likelihood ratio $LR$ is calculated by E-step. 
 
   Given an example, $seq={\rm TTGACGACTGCACGT}$, $\pi$ and its likelihood ratio $LR$ are:
+  
 |$\pi$|$LR$|
 |---|---|
 |${\rm TTGAC}$|0.8|

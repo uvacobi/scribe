@@ -26,25 +26,25 @@ For motif finding, the input data is a set of DNA sequences and the output is en
   
   Single-letter and ambiguity codes for nucleotides (Table)
 
-|Symbol|Meaning|Origin of designation|
-|---|---|---|
-|G|G|**G**uanine|
-|A|A|**A**denine|
-|T|T|**T**hymine|
-|C|C|**C**ytosine|
-|R|G or A|pu**R**ine|
-|Y|T or C|p**Y**rimidine|
-|M|A or C|a**M**ino|
-|K|G or T|**K**eto|
-|S|G or C|**S**trong interaction (3H bonds)|
-|W|A or T|**W**eak interaction (2H bonds)|
-|H|A or C or T|not-G, H follows G in the alphabet|
-|B|G or T or C|not-A, B follows A|
-|V|G or C or A|not-T (not-U), V follows U|
-|D|G or A or T|not-C, D follows C|
-|N|G or A or T or C|a**N**y|
+  |Symbol|Meaning|Origin of designation|
+  |---|---|---|
+  |G|G|**G**uanine|
+  |A|A|**A**denine|
+  |T|T|**T**hymine|
+  |C|C|**C**ytosine|
+  |R|G or A|pu**R**ine|
+  |Y|T or C|p**Y**rimidine|
+  |M|A or C|a**M**ino|
+  |K|G or T|**K**eto|
+  |S|G or C|**S**trong interaction (3H bonds)|
+  |W|A or T|**W**eak interaction (2H bonds)|
+  |H|A or C or T|not-G, H follows G in the alphabet|
+  |B|G or T or C|not-A, B follows A|
+  |V|G or C or A|not-T (not-U), V follows U|
+  |D|G or A or T|not-C, D follows C|
+  |N|G or A or T or C|a**N**y|
 
-  It is derived by IUPAC. one limitation is that they can not measure continue relation/difference because it is binary decision.
+    It is derived by IUPAC. one limitation is that they can not measure continue relation/difference because it is binary decision.
 
 - Entropy
 
@@ -143,7 +143,7 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
     |4|0.03|0.42|0.1|0.47|
     |5|0.2|0.5|0.1|0.2|
     
-    Then, for $LR_1$, $P({rm TTGAC}|\theta_0)=p_{0{\rm T}}\times p_{0{\rm T}}\times p_{0{\rm G}}\times p_{0{\rm A}}\times p_{0{\rm C}}=0.3\times 0.3\times 0.2\times 0.3\times 0.2=1.08\times 10^{-3}$, $P({rm TTGAC}|\theta)=P({\rm T in pos1})\times P({\rm T in pos2})\times P({\rm G in pos3})\times P({\rm A in pos4})\times P({\rm C in pos5})=0.2\times 0.1\times 0.3\times 0.03\times 0.5=9\times 10^{-5}$. Therefore, the likelihood ratio of the first motif $\pi_1$ is $LR_1=\frac{P({\rm TTGAC}|\theta)}{P({\rm TTGAC}|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
+    Then, for $LR_1$, $$P({rm TTGAC}|\theta_0)=p_{0{\rm T}}\times p_{0{\rm T}}\times p_{0{\rm G}}\times p_{0{\rm A}}\times p_{0{\rm C}}=0.3\times 0.3\times 0.2\times 0.3\times 0.2=1.08\times 10^{-3}$$, $$P({rm TTGAC}|\theta)=P({\rm T in pos1})\times P({\rm T in pos2})\times P({\rm G in pos3})\times P({\rm A in pos4})\times P({\rm C in pos5})=0.2\times 0.1\times 0.3\times 0.03\times 0.5=9\times 10^{-5}$$. Therefore, the likelihood ratio of the first motif $\pi_1$ is $LR_1=\frac{P({\rm TTGAC}|\theta)}{P({\rm TTGAC}|\theta_0)}=\frac{9\times 10^{-5}}{1.08\times 10^{-3}}$. Then we can calculate $LR_2, LR_3, LR_4,$ etc.
 - M-step: given $theta_0$, $seq$, and $\pi$ to estimate $\theta$, in which $\theta_0$ and $seq$ are known while $\pi$ with its likelihood ratio $LR$ is calculated by E-step. 
 
   Given an example, $seq={\rm TTGACGACTGCACGT}$, $\pi$ and its likelihood ratio $LR$ are:

@@ -122,7 +122,9 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
 
   Given an example, $\theta_0: p_{0{\rm A}}=0.3, p_{0{\rm C}}=0.2, p_{0{\rm G}}=0.2, p_{0{\rm T}}=0.3$. 
     $seq:$
-    $$\begin{matrix}
+    \setcounter{MaxMatrixCols}{20}
+    $$\begin{table}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c}
     {\rm T}&{\rm T}&{\rm G}&{\rm A}&{\rm C}&{\rm G}&{\rm A}&{\rm C}&{\rm T}&{\rm G}&{\rm C}&{\rm A}&{\rm C}&{\rm G}&{\rm T}& & & & \\\\
     {\rm T}&{\rm T}&{\rm G}&{\rm A}&{\rm C}&\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &LR_1\\\\
      &{\rm T}&{\rm G}&{\rm A}&{\rm C}&{\rm G}& & & & & & & & & & & & &LR_2\\\\
@@ -133,7 +135,8 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
      & & & & & &{\rm A}&{\rm C}&{\rm T}&{\rm G}&{\rm C}& & & & & & & &LR_7\\\\
      & & & & & & &{\rm C}&{\rm T}&{\rm G}&{\rm C}&{\rm A}& & & & & & &LR_8\\\\
      & & & & & & & &.&.&.& & & & & & & & \\\\
-     \end{matrix}$$
+     \end{tabular}
+     \end{table}$$
      $\theta$:
     |pos|A|C|G|T|
     |---|---|---|---|---|

@@ -58,7 +58,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
 - Position weight matrix
     
     Here are some DNA sequences. The first line is the position: 
-    \begin{matrix}1&2&3&4&5&6&7&8&9\\\\
+    $$\begin{matrix}1&2&3&4&5&6&7&8&9\\\\
     G&A&G&G&T&A&A&A&C\\\\
     T&C&C&G&T&A&A&G&T\\\\
     C&A&G&G&T&T&G&G&A\\\\
@@ -69,7 +69,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
     C&A&G&G&T&A&T&A&C\\\\
     T&G&T&G&T&G&A&G&T\\\\
     A&A&G&G&T&A&A&G&T
-    \end{matrix}
+    \end{matrix}$$
     
     In each position, we count the number of A, C, G, and T, respectively. Then we get the corresponding position frequency matrix (PFM):
     $$M=\begin{matrix}
@@ -122,7 +122,7 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
 
   Given an example, $\theta_0: p_{0{\rm A}}=0.3, p_{0{\rm C}}=0.2, p_{0{\rm G}}=0.2, p_{0{\rm T}}=0.3$. 
     $seq:$
-    \begin{matrix}
+    $$\begin{matrix}
     {\rm T}&{\rm T}&{\rm G}&{\rm A}&{\rm C}&{\rm G}&{\rm A}&{\rm C}&{\rm T}&{\rm G}&{\rm C}&{\rm A}&{\rm C}&{\rm G}&{\rm T}& & & & \\\\
     {\rm T}&{\rm T}&{\rm G}&{\rm A}&{\rm C}& & & & & & & & & & & & & &LR_1\\\\
      &{\rm T}&{\rm G}&{\rm A}&{\rm C}&{\rm G}& & & & & & & & & & & & &LR_2\\\\
@@ -133,7 +133,7 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
      & & & & & &{\rm A}&{\rm C}&{\rm T}&{\rm G}&{\rm C}& & & & & & & &LR_7\\\\
      & & & & & & &{\rm C}&{\rm T}&{\rm G}&{\rm C}&{\rm A}& & & & & & &LR_8\\\\
      & & & & & & & &.&.&.& & & & & & & & \\\\
-     \end{matrix}
+     \end{matrix}$$
      $\theta$:
     |pos|A|C|G|T|
     |---|---|---|---|---|

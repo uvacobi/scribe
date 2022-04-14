@@ -160,19 +160,18 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
 - M-step: given $theta_0$, $seq$, and $\pi$ to estimate $\theta$, in which $\theta_0$ and $seq$ are known while $\pi$ with its likelihood ratio $LR$ is calculated by E-step. 
 
   Given an example, $seq={\rm TTGACGACTGCACGT}$, $\pi$ and its likelihood ratio $LR$ are:
-  
-|$\pi$|$LR$|
-|---|---|
-|${\rm TTGAC}$|0.8|
-|${\rm TGACG}$|0.2|
-|${\rm GACGA}$|0.6|
-|${\rm ACGAC}$|0.5|
-|${\rm CGACT}$|0.3|
-|${\rm GACTG}$|0.7|
-|${\rm ACTGC}$|0.4|
-|${\rm CTGCA}$|0.1|
-|${\rm TGCAC}$|0.9|
-|...|...|
+  |$\pi$|$LR$|
+  |---|---|
+  |${\rm TTGAC}$|0.8|
+  |${\rm TGACG}$|0.2|
+  |${\rm GACGA}$|0.6|
+  |${\rm ACGAC}$|0.5|
+  |${\rm CGACT}$|0.3|
+  |${\rm GACTG}$|0.7|
+  |${\rm ACTGC}$|0.4|
+  |${\rm CTGCA}$|0.1|
+  |${\rm TGCAC}$|0.9|
+  |...|...|
 
   Then we can update $\theta$ by estimate the probability of ${\rm A, C, G, T}$ in any of the 5 positions (5 is the length of the motif):
 \begin{align*}

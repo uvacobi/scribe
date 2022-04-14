@@ -58,7 +58,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
 - Position weight matrix
     
     Here are some DNA sequences. The first line is the position: 
-    $$\begin{matrix}1&2&3&4&5&6&7&8&9\\\\
+    $$\begin{tabular}1&2&3&4&5&6&7&8&9\\\\
     G&A&G&G&T&A&A&A&C\\\\
     T&C&C&G&T&A&A&G&T\\\\
     C&A&G&G&T&T&G&G&A\\\\
@@ -69,7 +69,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
     C&A&G&G&T&A&T&A&C\\\\
     T&G&T&G&T&G&A&G&T\\\\
     A&A&G&G&T&A&A&G&T
-    \end{matrix}$$
+    \end{tabular}$$
     
     In each position, we count the number of A, C, G, and T, respectively. Then we get the corresponding position frequency matrix (PFM):
     $$M=\begin{matrix}

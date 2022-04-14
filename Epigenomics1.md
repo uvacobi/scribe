@@ -1,9 +1,10 @@
 # Epigenomics 01
 From Professor Chongzhi Zang's lecture slides "Regulatory DNA, Transcription factors, Sequence motifs". Scribed by Zhaoxia Ma.
+
 ## Epigenome
 Different cells with similar genome sequences have different genes expression. The epigenome can control gene activities to decide which genes are turned on or off.
 
-{\it The epigenome is a multitude of chemical compounds that can tell the genome what to do. The epigenome is made up of chemical compounds and proteins that can attach to DNA and direct such actions as turning genes on or off, controlling the production of proteins in particular cells.          <p align="right">--from genome.gov</p>*}
+The epigenome is a multitude of chemical compounds that can tell the genome what to do. The epigenome is made up of chemical compounds and proteins that can attach to DNA and direct such actions as turning genes on or off, controlling the production of proteins in particular cells.          <p align="right">--from genome.gov</p>
 
 ## Epigenomic marks
 
@@ -20,6 +21,7 @@ Different cells with similar genome sequences have different genes expression. T
 
 ### Sequence motif
 In general, a motif is a distinctive pattern that occurs repeatedly. In biomelecular studies, a sequence motif is a pattern common to a set of DNA, RNA, or protein sequences that share a common biological property, such as functioning as binding sites for a particular protein.
+
 #### Sequence motif finding
 For motif finding, the input data is a set of DNA sequences and the output is enriched sequence patterns (motifs).
 - Motif representation
@@ -44,7 +46,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
   |D|G or A or T|not-C, D follows C|
   |N|G or A or T or C|a**N**y|
 
-    It is derived by IUPAC. one limitation is that they can not measure continue relation/difference because it is binary decision.
+  It is derived by IUPAC. one limitation is that they can not measure continue relation/difference because it is binary decision.
 
 - Entropy
 
@@ -98,7 +100,8 @@ For motif finding, the input data is a set of DNA sequences and the output is en
     \end{bmatrix}$$
     
     When we talk about TF binding sites or motifs, we always see some sequence logo. The sequence logo consists of stacks of symbols, one stack is for each position in the sequence. The overall height of the stack indicates the sequence conservation at that position (information content). The height of symbols within the stack indicates the relative frequency of nucleic acid at that position. For example, in this sequence logo, the height of each position is calculated as $R_i=\log_2(4)-H_i$, in which $H_i=-\sum\limits_kM_{k,i}\times\log_2M_{k,i}$
-![sequence logo](figs/motif_eg.PNG)
+	
+	![sequence logo](figs/motif_eg.PNG)
 
     Given the PPM (M) and a background model $b$, we can calculate the position weight matrix (PWM). In the PWM, $M_{k,i}=\log_2(M_{k,i}/b_k)$, in which $b=(b_1, b_2, b_3, b_4)=(p_A, p_C, p_G, p_T)$. For nucleotides, $b_k=0.25$. In general, $b_k$ does not have to be equal for each symbol. For example, if the organisms we studied with a high GC-content, the $b_k$ for C and G will be higher than that for A and T. Besides, in practice, in order for convenience for calculation, we will give a pseudo count (such as 0.0001) to 0 to avoid the logarithm of 0.
     
@@ -123,18 +126,19 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
   Given an example, $\theta_0: p_{0{\rm A}}=0.3, p_{0{\rm C}}=0.2, p_{0{\rm G}}=0.2, p_{0{\rm T}}=0.3$. 
     $seq:$
     $$\begin{array}{ccccccccccccccccccc}
-    {\rm T}&{\rm T}&{\rm G}&{\rm A}&{\rm C}&{\rm G}&{\rm A}&{\rm C}&{\rm T}&{\rm G}&{\rm C}&{\rm A}&{\rm C}&{\rm G}&{\rm T}& & & & \\\\
-    {\rm T}&{\rm T}&{\rm G}&{\rm A}&{\rm C}&\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &LR_1\\\\
-     &{\rm T}&{\rm G}&{\rm A}&{\rm C}&{\rm G}& & & & & & & & & & & & &LR_2\\\\
-     & &{\rm G}&{\rm A}&{\rm C}&{\rm G}&{\rm A}& & & & & & & & & & & &LR_3\\\\
-     & & &{\rm A}&{\rm C}&{\rm G}&{\rm A}&{\rm C}& & & & & & & & & & &LR_4\\\\
-     & & & &{\rm C}&{\rm G}&{\rm A}&{\rm C}&{\rm T}& & & & & & & & & &LR_5\\\\
-     & & & & &{\rm G}&{\rm A}&{\rm C}&{\rm T}&{\rm G}& & & & & & & & &LR_6\\\\
-     & & & & & &{\rm A}&{\rm C}&{\rm T}&{\rm G}&{\rm C}& & & & & & & &LR_7\\\\
-     & & & & & & &{\rm C}&{\rm T}&{\rm G}&{\rm C}&{\rm A}& & & & & & &LR_8\\\\
+    T&T&G&A&C&G&A&C&T&G&C&A&C&G&T& & & & \\\\
+    T&T&G&A&C&\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &\ &LR_1\\\\
+     &T&G&A&C&G& & & & & & & & & & & & &LR_2\\\\
+     & &G&A&C&G&A& & & & & & & & & & & &LR_3\\\\
+     & & &A&C&G&A&C& & & & & & & & & & &LR_4\\\\
+     & & & &C&G&A&C&T& & & & & & & & & &LR_5\\\\
+     & & & & &G&A&C&T&G& & & & & & & & &LR_6\\\\
+     & & & & & &A&C&T&G&C& & & & & & & &LR_7\\\\
+     & & & & & & &C&T&G&C&A& & & & & & &LR_8\\\\
      & & & & & & & &.&.&.& & & & & & & & \\\\
      \end{array}$$
      $\theta$:
+	 
     |pos|A|C|G|T|
     |---|---|---|---|---|
     |1|0.7|0.1|0.01|0.2|
@@ -171,11 +175,12 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
 |...|...|
 
   Then we can update $\theta$ by estimate the probability of ${\rm A, C, G, T}$ in any of the 5 positions (5 is the length of the motif):
-$$
+\begin{align*}
 P({\rm T\ in\ pos1})=\frac{0.8+0.2+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
 P({\rm T\ in\ pos2})=\frac{0.8+0.1+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
 P({\rm G\ in\ pos2})=\frac{0.2+0.3+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
 P({\rm C\ in\ pos5})=\frac{0.8+0.5+0.4+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
-... ...
-$$
+...\ ...\ ...
+\end{align*}
+
   After we get the updated $\theta$ from the M-step, we can re calculate the E-step. Iterate the E-step and M-step until $\theta$ does not improve. Then we can find the most frequent k-mers by calculate the likelihood ratio of each $\pi$.

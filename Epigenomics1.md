@@ -172,10 +172,10 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
 
   Then we can update $\theta$ by estimate the probability of ${\rm A, C, G, T}$ in any of the 5 positions (5 is the length of the motif):
 $$
-P({\rm T in pos1})=\frac{0.8+0.2+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
-P({\rm T in pos2})=\frac{0.8+0.1+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
-P({\rm G in pos2})=\frac{0.2+0.3+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
-P({\rm C in pos5})=\frac{0.8+0.5+0.4+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
+P({\rm T\ in\ pos1})=\frac{0.8+0.2+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
+P({\rm T\ in\ pos2})=\frac{0.8+0.1+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
+P({\rm G\ in\ pos2})=\frac{0.2+0.3+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
+P({\rm C\ in\ pos5})=\frac{0.8+0.5+0.4+0.9+...}{0.8+0.2+0.6+0.5+0.3+0.7+0.4+0.1+0.9+...} \\\\
 ... ...
 $$
   After we get the updated $\theta$ from the M-step, we can re calculate the E-step. Iterate the E-step and M-step until $\theta$ does not improve. Then we can find the most frequent k-mers by calculate the likelihood ratio of each $\pi$.

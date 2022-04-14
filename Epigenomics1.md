@@ -4,7 +4,7 @@ From Professor Chongzhi Zang's lecture slides "Regulatory DNA, Transcription fac
 ## Epigenome
 Different cells with similar genome sequences have different genes expression. The epigenome can control gene activities to decide which genes are turned on or off.
 
-The epigenome is a multitude of chemical compounds that can tell the genome what to do. The epigenome is made up of chemical compounds and proteins that can attach to DNA and direct such actions as turning genes on or off, controlling the production of proteins in particular cells.          <p align="right">--from genome.gov</p>
+"The epigenome is a multitude of chemical compounds that can tell the genome what to do. The epigenome is made up of chemical compounds and proteins that can attach to DNA and direct such actions as turning genes on or off, controlling the production of proteins in particular cells."          <p align="right">--from genome.gov</p>
 
 ## Epigenomic marks
 

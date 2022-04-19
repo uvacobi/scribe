@@ -9,7 +9,7 @@ Different cells with similar genome sequences have different genes expression. T
 ## Epigenomic marks
 
 | |Chemical compounds |Proteins |Other molecules 
-|---|---|---|
+|---|---|---|---
 |DNA-associated|DNA methylation|Histones;<br> DNA-binding proteins<br> (transcription factors*)|RNA<br>(e.g., R loops)
 |Chromatin-associated|Histone modifications: methylations, acetylations, ... |Histone variants;<br> Chromatin regulators;<br> Histone modifying enzymes: writer, readers, erasers;<br> Chromatin remodeling complexes|Non-coding RNAs
 

@@ -123,7 +123,8 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
 
 - E-step: given $theta_0$, $seq$ and $\theta$ to estimate $\pi$, in which $\theta_0$ and $seq$ are known while $\theta$ is given a initial value. In alternative steps, $\theta$ is calculated by M-step. 
 
-  Given an example, $\theta_0: p_{0{\rm A}}=0.3, p_{0{\rm C}}=0.2, p_{0{\rm G}}=0.2, p_{0{\rm T}}=0.3$. 
+  Given an example, $\theta_0: p_{0{\rm A}}=0.3, p_{0{\rm C}}=0.2, p_{0{\rm G}}=0.2, p_{0{\rm T}}=0.3$.
+  
     $seq:$
     $$\begin{array}{ccccccccccccccccccc}
     T&T&G&A&C&G&A&C&T&G&C&A&C&G&T& & & & \\\\
@@ -160,6 +161,7 @@ estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the t
 - M-step: given $theta_0$, $seq$, and $\pi$ to estimate $\theta$, in which $\theta_0$ and $seq$ are known while $\pi$ with its likelihood ratio $LR$ is calculated by E-step. 
 
   Given an example, $seq={\rm TTGACGACTGCACGT}$, $\pi$ and its likelihood ratio $LR$ are:
+  
   |$\pi$|$LR$|
   |---|---|
   |${\rm TTGAC}$|0.8|

@@ -4,13 +4,13 @@ From Professor Chongzhi Zang's lecture slides "Regulatory DNA, Transcription fac
 ## Epigenome
 Different cells with similar genome sequences have different genes expression. The epigenome can control gene activities to decide which genes are turned on or off.
 
-"The epigenome is a multitude of chemical compounds that can tell the genome what to do. The epigenome is made up of chemical compounds and proteins that can attach to DNA and direct such actions as turning genes on or off, controlling the production of proteins in particular cells."          <p align="right">--from genome.gov</p>
+> "The epigenome is a multitude of chemical compounds that can tell the genome what to do. The epigenome is made up of chemical compounds and proteins that can attach to DNA and direct such actions as turning genes on or off, controlling the production of proteins in particular cells."          <p align="right">--from genome.gov</p>
 
 ## Epigenomic marks
 
-| |Chemical compounds |Proteins |Other molecules <th rowspan=1>Other information</th>
-|---|---|---|---
-|DNA-associated|DNA methylation|Histones;<br> DNA-binding proteins<br> (transcription factors*)|RNA<br>(e.g., R loops)<td rowspan=2> -nucleosome positioning;<br> - chromatin accessibility;<br> - 3D genome organization</td>
+| |Chemical compounds |Proteins |Other molecules 
+|---|---|---|
+|DNA-associated|DNA methylation|Histones;<br> DNA-binding proteins<br> (transcription factors*)|RNA<br>(e.g., R loops)
 |Chromatin-associated|Histone modifications: methylations, acetylations, ... |Histone variants;<br> Chromatin regulators;<br> Histone modifying enzymes: writer, readers, erasers;<br> Chromatin remodeling complexes|Non-coding RNAs
 
 

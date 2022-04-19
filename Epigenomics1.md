@@ -1,4 +1,4 @@
-# Epigenomics 01
+# Epigenomics1
 From Professor Chongzhi Zang's lecture slides "Regulatory DNA, Transcription factors, Sequence motifs". Scribed by Zhaoxia Ma.
 
 ## Epigenome

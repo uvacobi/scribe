@@ -6,7 +6,7 @@ output-file: scribe.pdf
 
 input-files:
 - 01-primer.md
-- Epigenomics1.md
+- 02-Epigenomics1.md
 
 table-of-contents: true
 

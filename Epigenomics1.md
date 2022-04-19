@@ -13,6 +13,7 @@ Different cells with similar genome sequences have different genes expression. T
 |DNA-associated|DNA methylation|Histones;<br> DNA-binding proteins<br> (transcription factors*)|RNA<br>(e.g., R loops)
 |Chromatin-associated|Histone modifications: methylations, acetylations, ... |Histone variants;<br> Chromatin regulators;<br> Histone modifying enzymes: writer, readers, erasers;<br> Chromatin remodeling complexes|Non-coding RNAs
 
+In addition to DNA-associated and chromatin-associated epigenomic marks, there are some other information served as epigenomic marks, such as nucleosome positioning, chromation accessibility and 3D genome orgenization, etc.
 
 
 ## Epigenomics

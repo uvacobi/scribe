@@ -105,7 +105,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
 	
 	![sequence logo](figs/motif_eg.PNG)
 
-    Given the PPM ($M$) and a background model $b$, we can calculate the position weight matrix (PWM). In the PWM, $M^'_{k,i}=\log_2(M_{k,i}/b_k)$, in which $b=(b_1, b_2, b_3, b_4)=(p_A, p_C, p_G, p_T)$. For nucleotides, $b_k=0.25$. In general, $b_k$ does not have to be equal for each symbol. For example, if the organisms we studied with a high GC-content, the $b_k$ for C and G will be higher than that for A and T. Besides, in practice, in order for convenience for calculation, we will give a pseudo count (such as 0.0001) to 0 to avoid the logarithm of 0.
+    Given the PPM ($M$) and a background model $b$, we can calculate the position weight matrix (PWM). In the PWM, $M'_{k,i}=\log_2(M_{k,i}/b_k)$, in which $b=(b_1, b_2, b_3, b_4)=(p_A, p_C, p_G, p_T)$. For nucleotides, $b_k=0.25$. In general, $b_k$ does not have to be equal for each symbol. For example, if the organisms we studied with a high GC-content, the $b_k$ for C and G will be higher than that for A and T. Besides, in practice, in order for convenience for calculation, we will give a pseudo count (such as 0.0001) to 0 to avoid the logarithm of 0.
     
 - Motif matching score
 

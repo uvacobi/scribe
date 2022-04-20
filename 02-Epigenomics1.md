@@ -123,7 +123,7 @@ Different from deterministic approach which is pattern driven approach, the prob
 The objects of this approach are as follows: $seq$ is sequence data to search for motif; $\theta_0$ is non-motif probability (genome backgrouhnd) parameter; $\theta$ is motif probability matrix parameter; $\pi$ is motif site location. The problem of this approach is to estimate $P(\theta, \pi|seq, \theta_0)$. The approach is to alternately
 estimate one of $\pi$ and $\theta$ each time by fixing the other, in which the two steps are called E-step and M-step respectively. Here is an example for this approach:
 
-- E-step: given $theta_0$, $seq$ and $\theta$ to estimate $\pi$, in which $\theta_0$ and $seq$ are known while $\theta$ is given a initial value. In alternative steps, $\theta$ is calculated by M-step. 
+- E-step: given $\theta_0$, $seq$ and $\theta$ to estimate $\pi$, in which $\theta_0$ and $seq$ are known while $\theta$ is given a initial value. In alternative steps, $\theta$ is calculated by M-step. 
 
   Given an example, $\theta_0: p_{0{\rm A}}=0.3, p_{0{\rm C}}=0.2, p_{0{\rm G}}=0.2, p_{0{\rm T}}=0.3$. 
   

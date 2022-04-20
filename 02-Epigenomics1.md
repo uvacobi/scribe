@@ -48,7 +48,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
   |D|G or A or T|not-C, D follows C|
   |N|G or A or T or C|a**N**y|
 
-  It is derived by IUPAC. One limitation is that they can not measure continue relation/difference because it is binary decision.
+  It is derived by IUPAC. One limitation is that it can not measure continue relation/difference because it is a binary decision.
 
 - Entropy
 

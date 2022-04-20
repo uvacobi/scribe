@@ -109,7 +109,7 @@ For motif finding, the input data is a set of DNA sequences and the output is en
     
 - Motif matching score
 
-  Given the PPM and a background model $b$, we can also calculate the motif matching score using the likelihood ratio score. For example, the score for GAGGTAAAC = $\log_2\frac{p_G\times p_A \times p_G \times p_G \times p_T \times p_A \times p_A \times p_A \times p_A \times p_C}{b_G\times b_A \times b_G \times b_G \times b_T \times b_A \times b_A \times b_A \times b_A \times b_C}$
+  Given the PPM and a background model $b$, we can also calculate the motif matching score using the likelihood ratio score. For example, the score for GAGGTAAAC = $\log_2\frac{p_G\times p_A \times p_G \times p_G \times p_T \times p_A \times p_A \times p_A \times p_A \times p_C}{b_G\times b_A \times b_G \times b_G \times b_T \times b_A \times b_A \times b_A \times b_A \times b_C}$.
 
 ### De novo sequence motif finding
 The goal of de novo sequence motif finding is to look for common sequence patterns enriched in the input data compared to a background genome. There are two kinds approaches to do de novo sequence motif finding: deterministic approach and probabilistic approach. 

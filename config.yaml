@@ -6,8 +6,12 @@ output-file: scribe.pdf
 
 input-files:
 - 01-primer.md
+- 02-Epigenomics1.md
 - 06-hmm.md
 - 15-genomicIntervals.md
+- 16-ATAC-seq.md
+- 17-scalableAlgorithms.md
+- 21-DEA.md
 
 table-of-contents: true
 

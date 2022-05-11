@@ -14,6 +14,7 @@ input-files:
 - 15-genomicIntervals.md
 - 16-ATAC-seq.md
 - 17-scalableAlgorithms.md
+- 20-dimensionalityReduction.md
 - 21-DEA.md
 
 table-of-contents: true

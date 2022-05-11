@@ -1,15 +1,8 @@
----
-author:
-- wcp7cp
-date: April 2022
-title: 'Will-Peterson-Dimensionality-Reduction'
----
+# Dimensionality reduction
 
-Curse of Dimensionality
-=======================
+## Curse of Dimensionality
 
-![Hypersphere (HS) and Hypercube (HC) mentioned
-below](cube){width="7cm"}
+![Hypersphere (HS) and Hypercube (HC) mentioned below](figs/cube.png){width="7cm"}
 
 Let $V_{HC}$ be the volume of the hypercube and $V_{HS}$ be the volume
 of the hypersphere. Now, what happens to volume of these two shapes as
@@ -65,8 +58,7 @@ the edges between each serve to represent some biological relation. The
 properties that allow for biological networks to be so powerful are
 provided below.
 
-Properties of Biological Networks
----------------------------------
+### Properties of Biological Networks
 
 1.  Highly interconnected with modular structure.
 
@@ -83,10 +75,9 @@ Properties of Biological Networks
 5.  Ideal for dimenstional reduction approaches to both visualize and
     analyze functional genomics data.
 
-PCA: Principal Component Analysis
-=================================
+## PCA: Principal Component Analysis
 
-![image](figs/pca.png){width="7cm"}
+![Principal Component Analysis](figs/pca.png){width="7cm"}
 
 ### Intuition
 
@@ -129,8 +120,7 @@ space. However, in reducing the dimensionality of the data, there is the
 obvious tradeoff of information loss that was once captured when all
 features were included.
 
-Non-Negative Matrix Factorization
-=================================
+## Non-Negative Matrix Factorization
 
 The goal with Non-Negative Matrix Factorization is to factorize a given
 matrix V into a product of two resulting matrices, W (representing
@@ -159,10 +149,9 @@ easily explore the most relevant features to the dataset. This is most
 valuable when the dimensionality of the dataset is increased and
 extracting the most relevant features becomes difficult.
 
-t-Distributed Stochastic Neighbor Embedding (t-SNE)
-===================================================
+## t-Distributed Stochastic Neighbor Embedding (t-SNE)
 
-![image](figs/tsne.png){width="7cm"}
+![t-Distributed Stochastic Neighbor Embedding (t-SNE)](figs/tsne.png){width="7cm"}
 
 Intuition
 ---------
@@ -208,10 +197,9 @@ t-SNE is able to escape overcrowded clusters by maintaining the same
 distribution of distances amongst samples, even in a lower dimensional
 space.
 
-Uniform Manifold Approximation & Projection (UMAP)
-==================================================
+## Uniform Manifold Approximation & Projection (UMAP)
 
-![image](figs/umap.png){width="7cm"}
+![Uniform Manifold Approximation & Projection (UMAP)](figs/umap.png){width="7cm"}
 
 Unlike many of the previously mentioned algorithms, UMAP is based on a
 newly emerging approach to dimensionality reduction known as \"manifold
@@ -224,10 +212,7 @@ constructed. We can analogize this approach using graph strucutres, The
 simplical complexes, illustrated in the figure below, are used to first
 derive a higher dimension graphical representation of the input matrix.
 
-Uniform Manifold Approximation & Projection (UMAP)
-==================================================
-
-![image](figs/simplex.png){width="7cm"}
+![Simplex](figs/simplex.png){width="7cm"}
 
 Once the higher dimensional simplical complex is formed and accurately
 spans the input matrix, the complex is slowly optimized to a lower

@@ -8,7 +8,9 @@ input-files:
 - 00-primer.md
 - 10-hmm.md
 - 11-lin_reg_chi_sq.md
+- 12-regulatoryDNA.md
 - 13-ChIP-seq.md
+- 14-scalesGenomeStructure.md
 
 table-of-contents: true
 

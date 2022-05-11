@@ -1,6 +1,4 @@
-# Unit 2: Epigenome
-
-## Chapter 14: Epigenomic domains, Hierarchy and scales of genome structure
+# Epigenomic domains, Hierarchy and scales of genome structure
 
 ## Epigenomics and chromatin structure
 
@@ -8,13 +6,8 @@
 - DNA is wrapped around histone octamers (2 histones of: H2A, H2B, H3, H4) called **nucleosomes** (core particles)
 - Each nucleosome is wrapped by 147 bp of DNA.
 - Histone tails have residues that can be modified (chemical modification/variants)
-- Covalent modifications on histone tailes include: methylation (me), acetylation (ac), phosphorylation, etc.
+- Covalent modifications on histone tails include: methylation (me), acetylation (ac), phosphorylation, etc.
 - Histone modifications play an important role in gene transcription since they can define areas of repression/activation of genes.
-
-<p float="left">
-  <img src="./chromatinstructure.jpeg" width=300/>
-  <img src="./nucleosome.png" width=300/> 
-</p>
 
 ## Functional annotation of common histone marks
 
@@ -90,7 +83,7 @@ Extra notes:
 | Signal scan                | Sliding windows with bandwidth                | Non-overlapping bin read count                                                    |
 | Peak region identification | Merge windows                                 | Merge windows allowing gaps                                                       |
 | Peak scoring               | Pile-up signal amount (#reads\*fragment size) | Aggregate score on islands                                                        |
-| Significance modeling      | Poisson with dynamic λ                        | Asymptotic estimation of island score statistics model, then compare with control |
+| Significance modeling      | Poisson with dynamic $\lambda$                        | Asymptotic estimation of island score statistics model, then compare with control |
 | Additional information     | Read count, Pile-up height,Summit position    | Read count, peak score, E-value                                                   |
 
 **Extra Notes:**
@@ -109,8 +102,8 @@ Extra notes:
 **Scoring Islands**
 
 - This is based on the probability of finding the observed tag count in a random background
-- Having m reads in a window the probability of findinf reads in Poisson (m,λ) is the average number of reads in each window
-- Eligible windows are scored with the function: S=-lnP(m,λ)
+- Having m reads in a window the probability of findinf reads in Poisson (m,$\lambda$) is the average number of reads in each window
+- Eligible windows are scored with the function: S=-lnP(m,$\lambda$)
 - This score will aggregate all the eligible windows in the island and corresponds to the background probability of finding the observed pattern
 
 _Scales of histone mark islands and chromatin domains:_

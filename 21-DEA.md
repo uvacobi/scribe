@@ -1,7 +1,4 @@
-Class 21: Differential Expression Analysis
-================
-
-### Computational Genomics Scribe Notes 4/26/22
+# Differential Expression Analysis
 
 ## The Transcriptome
 

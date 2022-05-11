@@ -11,6 +11,9 @@ input-files:
 - 12-regulatoryDNA.md
 - 13-ChIP-seq.md
 - 14-scalesGenomeStructure.md
+- 15-genomicIntervals.md
+- 16-ATAC-seq.md
+- 17-scalableAlgorithms.md
 
 table-of-contents: true
 

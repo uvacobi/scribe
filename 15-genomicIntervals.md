@@ -6,23 +6,23 @@ Technological advances and lower sequencing costs have led to rapidly increasing
 ## WHAT CAN BE REPRESENTED AS AN INTERVAL?
 Because of the linear nature of DNA and RNA, many biological entities can be conceptualized as genomic intervals.
 
-**ChIP-seq or ATAC-seq peaks:** The results of peak calling are intervals that were drived from the ChIP-seq or ATAC-seq experiments. Peak calling is a computational method used to identify areas in a genome that have been enriched with aligned reads as a consequence of ChIP-seq or ATAC-seq experiment. 
+**ChIP-seq or ATAC-seq peaks:** The results of peak calling are intervals that were derived from the ChIP-seq or ATAC-seq experiments. Peak calling is a computational method used to identify areas in a genome that have been enriched with aligned reads as a consequence of ChIP-seq or ATAC-seq experiment. 
 
-**Single-Nucleotide Polymorphisms (SNPs):** SNPs can be repersent as a interval of length of 1. 
+**Single-Nucleotide Polymorphisms (SNPs):** SNPs can be represented as a interval of length of 1. 
 
-**Genes and gene components:** Genes and other genomic components such as TSS, exons, introns, and transcripts can be represent as intervals defined by the their start and end possitions. 
+**Genes and gene components:** Genes and other genomic components such as TSS, exons, introns, and transcripts can be represent as intervals defined by the their start and end positions. 
 
-**Non-coding DNA annotation:** Intervals can be used for non-coding DNA annatation. 
+**Non-coding DNA annotation:** Intervals can be used for non-coding DNA annotation. 
 
-![nonCodingDNAAnnotation](figs/nonCodingDNAAnnotation.png)
+![Non Coding DNA annotations](figs/nonCodingDNAAnnotation.png)
 
 **Chromosomes:** Chromosomes can be represent as intervals define by the chromosome lengths (e.g. chromosome sizes file)
 
 **Aligned sequence reads:** The locations of aligned reads resulted from any experiments can be represent as intervals. The interval representation can compress sequence data with sequence coordinates.
 
-**Protein domains:** Protein domains can be represent as intervals on protein sequences (proteomic interval). 
+**Protein domains:** Protein domains can be represented as intervals on protein sequences (proteomic interval). 
 
-![proteinDomain](figs/proteinDomain.png)
+![Protein domains](figs/proteinDomain.png)
 
 Genomic intervals are often a simplified abstraction of genomic sequence. And, interval operations are fundamental in genomics.
 
@@ -43,7 +43,7 @@ BED (Browser Extensible Data) format provides a flexible way to define the data 
 
 **score -** A score between 0 and 1000. If the track line useScore attribute is set to 1 for this annotation data set, the score value will determine the level of gray in which this feature is displayed (higher numbers = darker gray). This table shows the Genome Browser's translation of BED score values into shades of gray:
 
-![score](figs/BEDField.png)
+![Genome Browser translates BED score values into shades of gray](figs/BEDField.png)
 
 **strand -** Defines the strand. Either "." (no strand) or "+" or "-".
 
@@ -59,7 +59,7 @@ BED (Browser Extensible Data) format provides a flexible way to define the data 
 
 **blockStarts -** A comma-separated list of block starts. All of the blockStart positions should be calculated relative to chromStart. The number of items in this list should correspond to blockCount.
 
-The number of fields per line must be consistent throughout any single set of data in an annotation track. The order of the optional fields is binding: lower-numbered fields must always be populated if higher-numbered fields are used. BED3 format only have the 3 required fields; BED6 have the additional name, score, and strand field. The BED format was initialy used for visilization in UCSC Genome Browser. The visulization related BED fields are: thickStart, thickEnd, itemRgb, blockCount, blockSizes, and blockStarts.
+The number of fields per line must be consistent throughout any single set of data in an annotation track. The order of the optional fields is binding: lower-numbered fields must always be populated if higher-numbered fields are used. BED3 format only have the 3 required fields; BED6 have the additional name, score, and strand field. The BED format was initially used for visualization in UCSC Genome Browser. The visualization related BED fields are: thickStart, thickEnd, itemRgb, blockCount, blockSizes, and blockStarts.
 
 ### NARROWPEAK (BED-like)
 
@@ -111,30 +111,28 @@ Wiggle format is line-oriented. For wiggle custom tracks, the first line must be
 
 *format:*
 
-![fixedWiggleFormat](figs/fixedWiggleFormat.png)
+![fixedWiggle format](figs/fixedWiggleFormat.png)
 
 *example:*
 
-![fixedWiggleExp](figs/fixedWiggleExp.png)
+![fixedWiggle example](figs/fixedWiggleExp.png)
 
 **Variable-step:** This format is used for data with irregular intervals between new data points. After the wiggle track definition line, variable-step begins with a declaration line and is followed by two columns containing chromosome positions and data value. The declaration line starts with the word variable-step and is followed by a specification for a chromosome. The span specification has the same meaning as in fixed-step format. 
 
 *format:*
 
-![varWiggleFormat](figs/varWiggleFormat.png)
+![varWiggle Format](figs/varWiggleFormat.png)
 
 *example:*
 
-![varWiggleExp](figs/varWiggleExp.png)
+![varWiggle example](figs/varWiggleExp.png)
 
 
 ### BEDGRAPH
 
 The bedGraph format allows display of continuous-valued data in track format. This display type is useful for probability scores and transcriptome data. 
 
-*example:*
-
-![bedGraph](figs/bedGraph.png)
+![bedGraph example](figs/bedGraph.png)
 
 ### WHY SO MANY FORMATS?
 
@@ -156,14 +154,11 @@ Analysing genomic interval data can answer biological questions such as:
 
 ## INTERVAL COMPUTATIONS
 
-An **interval comparison** assumes a homology statement. A shared **coordinate system** is a prerequisite for interval comparison. Intervals with different reference genome assmebilies are not comparable.
+An **interval comparison** assumes a homology statement. A shared **coordinate system** is a prerequisite for interval comparison. Intervals with different reference genome assemblies are not comparable.
 
 ### OVERLAP
 
-Assuming the intervals are well-formed, which the position of start is less than the end ($X_{start} < X_{end}$), and the intervals are ordered by start ($A_{start} < B_{start}$)​, interval $A$ overlapping with $B$ if $A_{end} > B_{start}$
-
-
-interval as set
+Assuming the intervals are well-formed, which the position of start is less than the end ($X_{start} < X_{end}$), and the intervals are ordered by start ($A_{start} < B_{start}$), interval $A$ overlapping with $B$ if $A_{end} > B_{start}$
 
 ### COUNTING OVERLAP 
 
@@ -186,7 +181,7 @@ If $max(A_{start}, B_{start}) > min(A_{end}, B_{end})$, then interval $A$ and $B
 
 ### UNION 
 
-To identify the union of two intervals $A$ and $B$, first, we need to confirm they interset, $A ∩ B$. Then, $R = A ∪ B$, where:
+To identify the union of two intervals $A$ and $B$, first, we need to confirm they intersect, $A ∩ B$. Then, $R = A ∪ B$, where:
 
 $R_{start} = min(A_{start}, B_{start})$
 $R_{end} = max(A_{end}, B_{end})$
@@ -196,11 +191,11 @@ $R_{end} = max(A_{end}, B_{end})$
 By counting the number of intervals in $\textbf{I}$ overlapping **q**, where $\textbf{I}$ is a set of intervals and **q** is the query interval, we can answer questionas such as the RNA-seq expression level of gene g
 a set of intervals. We can do that by looping through the list of intervals:
 
-![linearSearch](figs/linearSearch.png)
+![Linear search](figs/linearSearch.png)
 
 However, we may have billions of intervals to loop through, which make $\textbf{O(N)}$ comparisons where N is the number of intervals. We can improve the performance with **binary search**:
 
-![binarySearch](figs/binarySearch.png)
+![Binary search](figs/binarySearch.png)
 
 ## BINARY SEARCH
 
@@ -210,7 +205,7 @@ Binary search is a search algorithm that finds the position of a target value wi
 
 ![binarySearchExp2](figs/binarySearchExp2.png)
 
-However, we can not do binary seach on a BED file with sorted regions because binary search also requires random access. It requires the ability to access any element directly. Indexing would provide random access to the file. 
+However, we can not do binary search on a BED file with sorted regions because binary search also requires random access. It requires the ability to access any element directly. Indexing would provide random access to the file. 
 
 ## BINARY SEARCH TREES 
 
@@ -244,7 +239,7 @@ A NClist is a datastructure that can be queried for elements overlapping interva
 
 ### Augmented interval list (AIList)
 
-An AIList is constructed by first sorting the interval set, R, as a list by the start coordinate, then decomposing it into a few approximately flattened components (sublists), and then augmenting each sublist with the running maximum interval end. The query time for AIList is $\textbf{O(log2N+n+m)}$⁠, where n is the number of overlaps between R and the query interval, q, N is the number of intervals in the set R and m is the average number of extra comparisons required to find the n overlaps.
+An AIList is constructed by first sorting the interval set, R, as a list by the start coordinate, then decomposing it into a few approximately flattened components (sublists), and then augmenting each sublist with the running maximum interval end. The query time for AIList is $\textbf{O(log2N+n+m)}$, where n is the number of overlaps between R and the query interval, q, N is the number of intervals in the set R and m is the average number of extra comparisons required to find the n overlaps.
 
 ![AIList](figs/AIList.png)
 
@@ -431,5 +426,4 @@ Epigenomic data generation has rapidly increased, leading to large volumes of ge
 - **intersection**: intersection of two interval A and B is the region which is common to both A and B
 - **union**: union of two interval A and B consists of all regions belonging to either A or B
 - **overlap**: Two regions that are overlapping if they have interecting region
-
 

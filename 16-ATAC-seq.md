@@ -6,13 +6,10 @@
 
 The assay of transposase accessible chromatin (ATAC-seq) uses hyperactive Tn5 transposase to simultaneously cut and ligate adapters for high-throughput sequencing at regions of increased accessibility. Genome-wide mapping of insertion ends by high-throughput sequencing allows for multidimensional assays of the regulatory landscape of chromatin with a relatively simple protocol that can be carried out in hours for a standard sample size of 50,000 cells. ([Buenrostro et al. 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4374986/))
 
-![ATAC-seq Overview](figs/image-20220410155341445.png)
 
+### Tn5 transposase
 
-
-### TN5 transposase
-
-The ATAC-seq methodology relies on library construction using the hyperactive transposase Tn5. Tn5 is a prokaryotic transposase, which endogenously functions through the “cut and paste” mechanism, requiring sequence-specific excision of a locus containing 19 base-pair inverted repeats. Tn5 transposase used in ATAC-seq are loaded with sequencing adapters which create an active dimeric transposome complex. Engineered TN5 transposase harbors specific point mutants to the Tn5 backbone which significantly increases activity. Such transposase preferentially inserts sequencing adapters into unprotected regions of DNA, therefore acting as a probe for measuring chromatin accessibility genome-wide.
+The ATAC-seq methodology relies on library construction using the hyperactive transposase Tn5. Tn5 is a prokaryotic transposase, which endogenously functions through the “cut and paste” mechanism, requiring sequence-specific excision of a locus containing 19 base-pair inverted repeats. Tn5 transposase used in ATAC-seq are loaded with sequencing adapters which create an active dimeric transposome complex. Engineered Tn5 transposase harbors specific point mutants to the Tn5 backbone which significantly increases activity. Such transposase preferentially inserts sequencing adapters into unprotected regions of DNA, therefore acting as a probe for measuring chromatin accessibility genome-wide.
 
 
 
@@ -41,7 +38,6 @@ ATAC-seq
 ATAC-seq identifies nucleotides instead of fragments thus loses specificity compared with ChIP-seq.
 
 
-
 ## Basic Algorithm for Sequence-Based Genome Data
 
 ### Basic Workflow
@@ -62,9 +58,9 @@ ATAC-seq identifies nucleotides instead of fragments thus loses specificity comp
 
 * [F-seq](https://fureylab.web.unc.edu/software/fseq/) (https://fureylab.web.unc.edu/software/fseq/)
 
-  F-seq uses univariate kernel density estimation (kde) to infer the pdf and the smoothness of the density estimates can be controlled by setting the bandwidth.
+F-seq uses univariate kernel density estimation (kde) to infer the pdf and the smoothness of the density estimates can be controlled by setting the bandwidth.
   
-  ![Examples of histogram and density estimation properties.](figs/image-20220418195316340.png)
+![Examples of histogram and density estimation properties.](figs/image-20220418195316340.png)
 
 
 
@@ -78,19 +74,18 @@ Post-alignment
 
 * TSS Enrichment Score
 
-  The idea behind the TSS enrichment score metric is that ATAC-seq data is universally enriched at gene TSS regions compared to other genomic regions, due to large protein complexes that bind to promoters. It was also found that TSS enrichment to be representative across the majority of cell types tested in both bulk ATAC-seq and scATAC-seq ([ArchR](https://www.archrproject.com/bookdown/index.html)). 
+The idea behind the TSS enrichment score metric is that ATAC-seq data is universally enriched at gene TSS regions compared to other genomic regions, due to large protein complexes that bind to promoters. It was also found that TSS enrichment to be representative across the majority of cell types tested in both bulk ATAC-seq and scATAC-seq ([ArchR](https://www.archrproject.com/bookdown/index.html)). 
 
-  1) Collect a reference set of TSSs
-  2) Aggregate reads 2000 bp around TSSs
-  3) Tile into 100bp windows
-  4) $S_{TSS} = /frac{TSS}{background}$
+1. Collect a reference set of TSSs
+2. Aggregate reads 2000 bp around TSSs
+3. Tile into 100bp windows
+4. $S_{TSS} = \frac{TSS}{background}$
 
 * Fragment distribution
 
-  Typically, a successful ATAC-seq experiment should generate a fragment size distribution plot with decreasing and periodical peaks corresponding to the nucleosome-free regions (NFR) (< 100 bp) and mono-, di-, and tri-nucleosomes (~ 200, 400, 600 bp, respectively) ([Yan et al. 2020](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-1929-3))
+  Typically, a successful ATAC-seq experiment should generate a fragment size distribution plot with decreasing and periodical peaks corresponding to the nucleosome-free regions (NFR) (< 100 bp) and mono-, di-, and tri-nucleosomes (~200, 400, 600 bp, respectively) ([Yan et al. 2020](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-1929-3))
 
-  ![ATAC-seq fragment distribution](figs/image-20220418145719650.png)
-
+![ATAC-seq fragment distribution](figs/image-20220418145719650.png)
 
 
 ## Harmonization
@@ -225,4 +220,3 @@ Sources of batch effects include:
   5. Include surrogate variables as covariates in subsequent analyses.
 
 Confounding here is when technical batches coincide with biological interest. So avoid this situation when doing the experiment.
-

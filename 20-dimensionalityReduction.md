@@ -39,7 +39,7 @@ around a center mean so as to limit outliers.
 
     2.  in a unit 3-d cube is roughly 0.66.
 
-    3.  in a unit 1,000,000-d hypercube is $\sim$408.25.
+    3.  in a unit 1,000,000-d hypercube is roughly 408.25.
 
 3.  Distances from a random point to its nearest and farthest neighbor
     are similar.
@@ -82,9 +82,7 @@ provided below.
 ### Intuition
 
 Given a number of samples, we want to reduce the dimensionality of the
-feature set by maximizing the explained variance of each principal
-component when our given sample data is projected onto a space
-orthogonal to the previous principal component's vector space.
+feature set. We find directions that constitute an orthonormal basis in which different individual dimensions of the data are linearly uncorrelated. Principal component analysis (PCA) is the process of computing the principal components and using them to perform a change of basis on the data, sometimes using only the first few principal components and ignoring the rest. 
 
 ### Mathematical Basis
 
@@ -152,6 +150,8 @@ extracting the most relevant features becomes difficult.
 ## t-Distributed Stochastic Neighbor Embedding (t-SNE)
 
 ![t-Distributed Stochastic Neighbor Embedding (t-SNE)](figs/tsne.png){width="7cm"}
+
+A non-linear dimensional reduction approach that attempts to map a distribution of pairwise distances among nn high-dimensional samples from their high dimension to a distribution of pairwise distances of the nn samples in a low dimension. 
 
 Intuition
 ---------

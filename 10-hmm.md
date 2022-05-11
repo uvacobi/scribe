@@ -1,7 +1,7 @@
 # Hidden Markov Models
 
 ## Overview
-A **Hidden Markov Model (HMM)** is a statistical **Markov model** in which the system being modeled is assumed to be a Markov process. That is, it is a "memoryless" system whose trajectory is solely determined by its current state. The HMM is considered "hidden" because we do not (or cannot) know about the states of the variable being observed (say, $X$). Hence, we attempt to learn about $X$ by observing $Y$, some sort of observation/event that occurs due to the hidden states. Like all Markov processes, HMM has an additional requirement that the outcome of $Y$ at time $t=t_0$ may be "influenced" **only** by the outcome of $X$ at $t=t_0$ and that the outcomes of $X$ and $Y$ at $t<t_0$ must **not** affect the outcome of $Y$ at $t=t_0$. I.e. the states before the current state have no impact on the future except via the current state. It’s as if to predict tomorrow’s weather you could examine today’s weather but you weren’t allowed to look at yesterday’s weather!
+A **Hidden Markov Model (HMM)** is a statistical **Markov model** in which the system being modeled is assumed to be a Markov process. That is, it is a "memoryless" system whose trajectory is solely determined by its current state. The HMM is considered "hidden" because we do not (or cannot) know about the states of the variable being observed (say, $X$). Hence, we attempt to learn about $X$ by observing $Y$, some sort of observation/event that occurs due to the hidden states. Like all Markov processes, HMM has an additional requirement that the outcome of $Y$ at time $t=t_0$ may be "influenced" **only** by the outcome of $X$ at $t=t_0$ and that the outcomes of $X$ and $Y$ at $t<t_0$ must **not** affect the outcome of $Y$ at $t=t_0$. I.e. the states before the current state have no impact on the future except via the current state. It’s as if to predict tomorrow’s weather you could examine today’s weather but you were not allowed to look at yesterday’s weather!
 
 Here is an example of a 3-state **Markov model**:
 
@@ -11,7 +11,7 @@ As we move from state to state (*node to node* or *circle to circle*), there is 
 
 A Markov chain is useful when we need to compute a probability for a sequence of observable events. In many cases, however, the events we are interested in are hidden: we don’t observe them directly. For example, we don’t normally observe part-of-speech tags in a text. Rather, we see words and must infer the tags from the word sequence. We call the tags hidden because they are not observed.
 
-HMM's have applications in all sorts of areas including **thermodynamics, economics, speech,  pattern recognition, bioinformatics,** and more. They provide a foundation for probabilistic models of linear sequence ‘labeling’ problems.
+HMMs have applications in all sorts of areas including **thermodynamics, economics, speech,  pattern recognition, bioinformatics,** and more. They provide a foundation for probabilistic models of linear sequence ‘labeling’ problems.
 
 
 ## Mathematical Definition(s)
@@ -98,7 +98,7 @@ Given an observation sequence, $O$, and general structure of HMM, determine HMM 
 The most well-known algorithm for this is the Baum-Welch algorithm, which utilizes a stochastic gradient descent algorithm and is not guaranteed to be provide an optimal solution. It can also very computationally complex.
 
 ## Conclusions
-HMM's offer great prediction and modeling potential in the form of a highly-interpretable and statistically sound model/algorithm. They can be applied to many real-world problems and are often computationally efficient (when making inferences). They still, however, have both pros and cons:
+HMMs offer great prediction and modeling potential in the form of a highly-interpretable and statistically sound model/algorithm. They can be applied to many real-world problems and are often computationally efficient (when making inferences). They still, however, have both pros and cons:
 
 ### Pros:
 - HMM models are highly studied, statistically sound, and highly interpretable models.

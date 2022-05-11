@@ -5,9 +5,8 @@ to  : pdf
 output-file: scribe.pdf
 
 input-files:
-- 01-primer.md
-- 06-hmm.md
-- 15-genomicIntervals.md
+- 00-primer.md
+- 10-hmm.md
 
 table-of-contents: true
 

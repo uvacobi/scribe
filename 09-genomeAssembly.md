@@ -166,21 +166,14 @@ times longer than true SCS" (lecture slide)
 ## De Bruijn graph (DBG) assembly
 
 For the shortest common superstring problem if the genome is repetitive
-it will overcollapse the repeats. And
-
-Alternative algorithm. Slightly different kind of graph:
+it will collapse the repeats. An alternative algorithm involves a slightly different kind of graph:
 
 It is a directed graph: the edges has an arrow attached to it. This
 graph can have more than one edge pointing from one node to other.
 
-We assume that the sequencing reads are:
+We assume that the sequencing reads are of length k and we consider all possible substring of genome of length k (all possible k-mers)
 
-I\) of length k
-
-ii\) we get all possible substring of genome of length k (all possible
-k-mers)
-
-Construction of the De bruijn graph:
+### Construction of the De bruijn graph:
 
 For each k-mer generate k-1 suffix (or right k-1 mer) and k-1 mer prefix
 (or left k-1 mer). These k-1 mers will be the nodes. If a k-1 mer is
@@ -191,36 +184,31 @@ represents the parent k-mer of the corresponding k-1 mers. All distinct
 k-1 mers are present as node of the graph. For each k-mer in the
 original genome there is a corresponding edge in the de bruijn graph.
 
-![](figs/100002010000035C000001E78CCCF2C8735BD74F.png)![](figs/1000020100000184000001A1A3D106BE9AD67BC1.png)
+## Reconstruction of the original genome 
 
-Reconstruction of the original genome correspond to a walk in the de
-bruijn graph.
+Reconstruction of the original genome corresponds to a walk in the de bruijn graph. We start from any node in the graph and start moving from node to
+node following the directed edge in a walk.
 
-Walk: we start from any node in the graph and start moving from node to
-node following the directed edge.
-
-Eulerian walk: The walk that goes through all edges exactly ones.
-
-An eulerian walk gives the reconstruction of the original genome.
+*Eulerian walk*: The walk that goes through all edges exactly ones. An eulerian walk gives the reconstruction of the original genome.
 
 Some property of De bruijn graph:
 
-1\. De bruijn graph is directed
+1. De bruijn graph is directed
 
-2\. De bruijn graph is connected: any node in the de bruijn graph can be
-reached from any other node.
+2. De bruijn graph is connected: any node in the de bruijn graph can be
+rached from any other node.
 
-3\. De bruijn graph has two semi-balanced nodes: the number of incoming
-edges differ from number of outgoing edges by 1
+3. De bruijn graph has two semi-balanced nodes: the number of incoming
+eges differ from number of outgoing edges by 1
 
-4\. De bruijn graph is an eulerian graph meaning that it always has an
+4. De bruijn graph is an eulerian graph meaning that it always has an
 eulerian walk.
 
 Notice, unlike the overlap graphs here we are not looking for overlap
 between k-1 mers. We draw the edge that represents the k-mer and we are
 done. We get a directed and connected graph that is eulerian.
 
-Limitations:
+*Limitations*
 
 The problem is when there are repeats sometimes there can be more than
 one eulerian walk. Another problem is , kmers are not reads. Reads are
@@ -236,11 +224,11 @@ graph shuffle the sequence within the repeat region.
 Sequencing error, gaps and non-uniform coverage can lead to non-eulerian
 graph.
 
-Error correction:
+*Error correction*
 
-1\) Graph topology based error correction: for example: dead-end and
-disconnected bits may represent sequencing errors. Poliploidi can give
-rise to bubble structure.
+1. Graph topology based error correction: for example: dead-end and
+dconnected bits may represent sequencing errors. Poliploidi can give
+re to bubble structure.
 
-2\) k-mer based error correction: setting a k-mer frequency threshold to
+2. k-mer based error correction: setting a k-mer frequency threshold to
 filter k-mer generated from sequencing error

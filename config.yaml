@@ -8,6 +8,7 @@ input-files:
 - 00-primer.md
 - 10-hmm.md
 - 11-lin_reg_chi_sq.md
+- 13-ChIP-seq.md
 
 table-of-contents: true
 

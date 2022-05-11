@@ -6,6 +6,7 @@ output-file: scribe.pdf
 
 input-files:
 - 00-primer.md
+- 09-genomeAssembly.md
 - 10-hmm.md
 - 11-lin_reg_chi_sq.md
 - 12-regulatoryDNA.md
